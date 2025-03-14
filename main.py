@@ -9,4 +9,4 @@ def gerar_senha(tamanho=12):
 if __name__ == "__main__":
     tamanho = int(input("Quantos caracteres na senha? "))
     senha = gerar_senha(tamanho)
-    print(f"Senha gerada: {senha}")
+    print(f"Sua senha segura é: {senha}")
