@@ -1,17 +1,18 @@
 import random
 import string
+import pyperclip
 
-def gerar_senha(tamanho=12):
-    caracteres = string.ascii_letters + string.digits + string.punctuation
+def gerar_senha(tamanho=10, incluir_simbolos=True):
+
+    caracteres = string.ascii_letters + string.digits
+    if incluir_simbolos:
+        caracteres += string.punctuation
+
     senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
     return senha
 
+
 if __name__ == "__main__":
-<<<<<<< Updated upstream
-    tamanho = int(input("Quantos caracteres na senha? "))
-    senha = gerar_senha(tamanho)
-    print(f"Senha gerada: {senha}")
-=======
     print("🔐 Gerador de Senhas Seguras 🔐")
 
     # Commit 3: Garantir que a senha tenha entre 8 e 20 caracteres
@@ -36,9 +37,3 @@ if __name__ == "__main__":
     # Commit 1: Melhorando a exibição da senha gerada
     print("\n✅ Sua senha segura é:")
     print(f"🔑 {senha}")
-
-    # Pergunta se o usuário quer gerar outra senha
-    continuar = input("Deseja gerar outra senha? (s/n): ").strip().lower()
-    if continuar != 's':
-        print("👋 Obrigado por usar o gerador de senhas!")
->>>>>>> Stashed changes
