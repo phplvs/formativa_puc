@@ -1,8 +1,8 @@
 import random
 import string
+import pyperclip
 
-
-def gerar_senha(tamanho=12, incluir_simbolos=True):
+def gerar_senha(tamanho=10, incluir_simbolos=True):
 
     caracteres = string.ascii_letters + string.digits
     if incluir_simbolos:
@@ -30,6 +30,9 @@ if __name__ == "__main__":
     incluir_simbolos = input("Incluir símbolos? (s/n): ").strip().lower() == 's'
 
     senha = gerar_senha(tamanho, incluir_simbolos)
+    # 🔽🔽 Adicionando a cópia automática para o clipboard 🔽🔽
+    pyperclip.copy(senha)
+    print("\n📋 A senha foi copiada para a área de transferência!")
 
     # Commit 1: Melhorando a exibição da senha gerada
     print("\n✅ Sua senha segura é:")
